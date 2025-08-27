@@ -7,7 +7,62 @@
 //Teste larissa
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
+    char estado1, codigocarta1[50],nomeCidade1[50];
+    int populacao1, pontosturistico1;
+    float area1, pib1;
+
+    char estado2, codigocarta2[50],nomeCidade2[50];
+    int populacao2, pontosturistico2;
+    float area2, pib2;
+
+    printf("Digite o estado da primeira carta: \n");
+    scanf(" %c", &estado1);
+
+    printf("Digite o código da primeira carta: \n");
+    scanf("%s", codigocarta1);
+
+    printf("Digite o nome da cidade: \n");
+    scanf("%s", nomeCidade1);
+
+    printf("Digite a população: \n");
+    scanf("%d", &populacao1);
+
+    printf("Digite a área: \n");
+    scanf("%f", &area1);
+
+    printf("Digite o PIB: \n");
+    scanf("%f", &pib1);
+
+    printf("Digite o número de pontos turísticos: \n");
+    scanf("%d", &pontosturistico1);
+
+    //carta 2
+    printf("Digite o estado da segunda carta: \n");
+    scanf(" %c", &estado2);
+
+    printf("Digite o código da segunda carta: \n");
+    scanf("%s", codigocarta2);
+
+    printf("Digite o nome da cidade: \n");
+    scanf("%s", nomeCidade2);
+
+    printf("Digite a população: \n");
+    scanf("%d", &populacao2);
+
+    printf("Digite a área: \n");
+    scanf("%f", &area2);
+
+    printf("Digite o PIB: \n");
+    scanf("%f", &pib2);
+
+    printf("Digite o número de pontos turísticos: \n");
+    scanf("%d", &pontosturistico2);
+
+    printf("\nCarta 1:\n Estado: %c\n Código: %s\n Nome da cidade: %s\n População: %d\n Área: %.2f Km\n PIB: %f\n Números de pontos turísticos: %d\n", estado1, codigocarta1, nomeCidade1, populacao1, area1, pib1, pontosturistico1);
+
+    //carta 2
+     printf("\nCarta 2:\n Estado: %c\n Código: %s\n Nome da cidade: %s\n População: %d\n Área: %.2f Km\n PIB: %f\n Números de pontos turísticos: %d\n", estado2, codigocarta2, nomeCidade2, populacao2, area2, pib2, pontosturistico2);
+
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
     // Cadastro das Cartas:
