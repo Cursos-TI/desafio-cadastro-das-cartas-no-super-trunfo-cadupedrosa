@@ -7,14 +7,20 @@
 //Teste larissa
 
 int main() {
+
+    //atributos:
     char estado1, codigocarta1[50],nomeCidade1[50];
-    int populacao1, pontosturistico1;
-    float area1, pib1, densidadepop1, pibpercapita1;
+    unsigned long int populacao1;
+    int pontosturistico1;
+    float area1, pib1, densidadepop1, pibpercapita1, superpoder1;
 
     char estado2, codigocarta2[50],nomeCidade2[50];
-    int populacao2, pontosturistico2;
-    float area2, pib2, densidadepop2, pibpercapita2;
+    unsigned long int populacao2;
+    int pontosturistico2;
+    float area2, pib2, densidadepop2, pibpercapita2, superpoder2;
 
+
+    // Cadastro das Cartas:
     printf("Digite o estado da primeira carta: \n");
     scanf(" %c", &estado1);
 
@@ -25,7 +31,7 @@ int main() {
     scanf("%s", nomeCidade1);
 
     printf("Digite a população: \n");
-    scanf("%d", &populacao1);
+    scanf("%lu", &populacao1);
 
     printf("Digite a área: \n");
     scanf("%f", &area1);
@@ -47,7 +53,7 @@ int main() {
     scanf("%s", nomeCidade2);
 
     printf("Digite a população: \n");
-    scanf("%d", &populacao2);
+    scanf("%lu", &populacao2);
 
     printf("Digite a área: \n");
     scanf("%f", &area2);
@@ -65,21 +71,28 @@ int main() {
     densidadepop2 = populacao2 / area2;
     pibpercapita2 = pib2 / populacao2;
 
+    // Nivel Mestre CARTA 1 E 2 SUPERPODER (densidade invertida)
+    superpoder1 = populacao1 + area1 + pib1 + pontosturistico1 + pibpercapita1 + (1.0/densidadepop1);
+    superpoder2 = populacao2 + area2 + pib2 + pontosturistico2 + pibpercapita2 + (1.0/densidadepop2);
+
+    // Exibição dos Dados das Cartas:
     //carta 1
-    printf("\nCarta 1:\n Estado: %c\n Código: %s\n Nome da cidade: %s\n População: %d\n Área: %.2f Km\n PIB: %f\n Números de pontos turísticos: %d\n Densidade Populacional: %.2f\n PIB per capita: %.2f", estado1, codigocarta1, nomeCidade1, populacao1, area1, pib1, pontosturistico1, densidadepop1,pibpercapita1);
+    printf("\nCarta 1:\n Estado: %c\n Código: %s\n Nome da cidade: %s\n População: %lu\n Área: %.2f Km\n PIB: %2.f bilhões de reais\n Números de pontos turísticos: %d\n Densidade Populacional: %.2f\n PIB per capita: %.2f\n", estado1, codigocarta1, nomeCidade1, populacao1, area1, pib1, pontosturistico1, densidadepop1,pibpercapita1);
 
     //carta 2
-     printf("\nCarta 2:\n Estado: %c\n Código: %s\n Nome da cidade: %s\n População: %d\n Área: %.2f Km\n PIB: %f\n Números de pontos turísticos: %d\n Densidade Populacional: %.2f\n PIB per capita: %.2f", estado2, codigocarta2, nomeCidade2, populacao2, area2, pib2, pontosturistico2, densidadepop2, pibpercapita2);
+    printf("\nCarta 2:\n Estado: %c\n Código: %s\n Nome da cidade: %s\n População: %lu\n Área: %.2f Km\n PIB: %2.f bilhões de reais\n Números de pontos turísticos: %d\n Densidade Populacional: %.2f\n PIB per capita: %.2f\n", estado2, codigocarta2, nomeCidade2, populacao2, area2, pib2, pontosturistico2, densidadepop2, pibpercapita2);
 
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+
+    // Comparações
+    printf("\n=== Resultados ===\n");
+    printf("População: Vencedor -> Carta %d\n",populacao1 > populacao2);
+    printf("Área: Vencedor -> Carta %d\n", area1 > area2 );
+    printf("PIB: Vencedor -> Carta %d\n", pib1 > pib2 );
+    printf("Pontos Turísticos: Vencedor -> Carta %d\n", pontosturistico1 > pontosturistico2);
+    printf("PIB per Capita: Vencedor -> Carta %d\n", pibpercapita1 > pibpercapita2);
+    printf("Densidade Populacional: Vencedor -> Carta %d\n", densidadepop1 < densidadepop2);
+    printf("Super Poder: Vencedor -> Carta %d\n", superpoder1 > superpoder2);
+
 
     return 0;
 }
